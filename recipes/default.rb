@@ -30,12 +30,7 @@
 # Where disk alert notifications are sent and what percent full will trigger an alert
 template node['disk_alert']['script_location'] do
   source 'disk_alert.sh.erb'
-  owner node['ntp']['conf_owner']
-  group node['ntp']['conf_group']
+  owner node['disk_alert']['script_owner']
+  group node['disk_alert']['script_owner']
   mode '0755'
-end
-
-# Setup the cron if you tell me to
-if node['disk_alert']['setup_cron']
-  include_recipe 'disk_alert::cron'
 end

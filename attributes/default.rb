@@ -28,21 +28,8 @@
 #
 
 # default attributes for all platforms
-default['disk_alert']['notification_email'] = 'diskalert@example.com'
+default['disk_alert']['notification_email'] = 'root'
 default['disk_alert']['alert_level']        = '80'
-default['disk_alert']['script_location']    = '/opt/disk_alert.sh'
+default['disk_alert']['script_location']    = '/etc/cron.daily/diskAlert'
 default['disk_alert']['script_owner']       = 'root'
 default['disk_alert']['script_group']       = 'root'
-
-default['disk_alert']['setup_cron']         = true
-
-# Configuration for cron stuff
-default['disk_alert']['cron'] = {
-  'minute' => '0',
-  'hour'   => '9',
-  'path'   => nil,
-  'environment_variables' => nil,
-  'log_file'   => '/dev/null',
-  'use_cron_d' => false,
-  'mailto'     => nil,
-}
