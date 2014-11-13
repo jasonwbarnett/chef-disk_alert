@@ -12,4 +12,4 @@ recipe 'disk_alert::cron', 'Ponfigures the cron'
   supports os
 end
 
-depends 'cron', '>= 1.2.0'
+depends 'cron', '>= 1.6.1'
